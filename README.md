@@ -1,6 +1,6 @@
 # Date Tool
 
-#### Video tuto: https://youtu.be/0-MhMSnq_6A
+#### Video demo: https://youtu.be/0-MhMSnq_6A
 
 ## Description
 
