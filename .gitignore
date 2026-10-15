@@ -1,3 +1,5 @@
 __pycache__/
 .pytest_chache/
 .ruff_cache/
+.venv/
+.dist/

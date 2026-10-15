@@ -31,19 +31,23 @@ The project depends on the following third-party packages:
 - `questionary`
 - `python-dateutil`
 
-Install the dependencies with:
+Install the package and its runtime dependencies with:
 
 ```console
-pip install -r requirements.txt
+python -m pip install .
 ```
+
+To install the test dependency as well, use `python -m pip install ".[test]"`.
 
 ## Usage
 
 Run the program from the project directory with:
 
 ```console
-python date_tool.py
+python -m date_tool
 ```
+
+After installation, the `date-tool` command can also be used.
 
 The program displays an interactive menu with the following options:
 
@@ -58,9 +62,11 @@ Each option except **Exit** prompts the user for the information required to per
 
 If the input is invalid, the program prints an error message and prompts the user again. For example, if the program requests a date in `YYYY-MM-DD` format and the user enters `dog` or an invalid date such as `2026-02-31`, the program prints `Insert a valid date!` and asks for another input.
 
-## `date_tool.py`
+## Package structure
 
-The main program is contained in `date_tool.py`. It defines the classes, functions, constants, and interactive menu used by the program.
+The package is in `src/date_tool/`. Its `__main__.py` contains the interactive
+menu, `operations.py` contains date calculations and formatting, and
+`controls.py` contains date parsing, validation, and selection helpers.
 
 ### `CalendarDate`
 
@@ -101,10 +107,10 @@ The `get_operator()` function displays a menu for choosing whether to add or sub
 
 ## Testing
 
-Automated tests are contained in `test_date_tool.py`. Run them with:
+Automated tests are in `tests/`. Run them with:
 
 ```console
-python -m pytest test_date_tool.py
+python -m pytest
 ```
 
 The tests cover date calculations and manipulation, age calculation and formatting, business-day calculations, holiday handling, and input validation. The test suite uses `pytest`, with separate test functions for each major feature.
